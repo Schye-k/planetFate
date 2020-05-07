@@ -1,0 +1,772 @@
+* {
+	margin: 0; 
+	padding: 0;
+}
+
+body {
+	background-image: url('../img/spaceDecorationPlanet/spaceDecorationDefault.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 2vw;
+	color: white;
+
+	display: flex;
+	flex-direction: row;
+}
+
+::selection {
+	background-color: rgba(255, 0, 0, 0.75);	
+}
+
+#logo {
+	position: absolute;
+	right: 5vw; 
+	top: 1.5vw;
+	height: 10vw;
+}
+
+#planetSide {
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 5px;
+	height: 40vw;
+	width: 20vw;
+	margin-left: 11vw;
+	margin-top: 5vw;
+	position: relative;
+	transition: 0.5s;
+
+}
+
+
+.sun {
+	position: absolute;
+	height: 10vw;
+	top: 19vw;
+	left: -1vw;
+	opacity: 0;
+	transition: opacity 0.3s;
+	transform: scale(0.5);
+	animation-name: none;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+#sun1 {
+	transform: none;
+	opacity: 0;
+}
+
+
+@keyframes sunRotate {
+	from {transform : scale(0.5) rotate(-50deg);}
+	to {transform : scale(1) rotate(0deg); }
+}
+
+
+#planetChosen {
+	height: 10vw;
+	top: 10vw;
+	left: 5vw;
+	position: absolute;
+	transition: opacity 0.5s;
+	animation-name: none;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	transform: rotate(-10deg);
+
+}
+
+#planetChosen1 {
+	position: absolute;
+	height: 8.3vw;
+	left: 5.9vw;
+	top: 11.1vw;
+	opacity: 0;
+	transition: opacity 0.5s;
+	animation-name: none;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	transform: rotate(-10deg);
+}
+
+#planetChosen2 {
+	position: absolute;
+	height: 6.2vw;
+	left: 6.9vw;
+	top: 12.2vw;
+	opacity: 0;
+	transition: opacity 0.5s;
+	animation-name: none;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	transform: rotate(-10deg);
+}
+
+#planetChosen3 {
+	position: absolute;
+	height: 8.9vw;
+	left: 5.55vw;
+	top: 10.8vw;
+	opacity: 0;
+	transition: opacity 0.5s;
+	animation-name: none;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	transform: rotate(-10deg);
+}
+
+#planetChosen4 {
+	position: absolute;
+	height: 8.9vw;
+	left: 5.55vw;
+	top: 10.8vw;
+	opacity: 0;
+	transition: opacity 0.5s;
+	animation-name: none;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	transform: rotate(-10deg);
+}
+
+#planetChosen5 {
+	position: absolute;
+	height: 8.2vw;
+	left: 5.9vw;
+	top: 11.2vw;
+	opacity: 0;
+	transition: opacity 0.5s;
+	animation-name: none;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	transform: rotate(-10deg);
+}
+
+
+#planetChosen6 {
+	position: absolute;
+	height: 8.11vw;
+	left: 5.98vw;
+	top: 11.24vw;
+	opacity: 0;		transition: opacity 0.5s;
+	animation-name: none;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	transform: rotate(-10deg);
+}
+
+
+@keyframes rotate {
+	0% {transform: rotate(-10deg);}
+	100% {transform: rotate(0deg);}
+}
+
+
+.moon1 {
+	position: absolute;
+	height: 6vw;
+	left: 6vw;
+	top: 5vw;
+	opacity: 0;
+	transition: 0.4s;
+}
+
+.moon2 {
+	position: absolute;
+	height: 5vw;
+	left: 11vw;
+	top: 6vw;
+	opacity: 0;
+	transition: 0.4s;
+}
+
+.moon3 {
+	position: absolute;
+	height: 4vw;
+	left: 14vw; 
+	top: 9.75vw;
+	opacity: 0;
+	transition: 0.4s;
+}
+
+
+#switchRight {
+	height: 2vw; 
+	width: 1vw; 
+	background-color: transparent;
+	cursor: pointer;
+	position: relative;
+	margin-left: 19vw;
+	bottom: -14.5vw;
+}
+
+#switchRight::before {
+	content: "";
+	position: absolute;
+	left: 0.5vw;
+	bottom: 0.85vw;
+	background-color: white;
+	height: 1.1vw; 
+	width: 0.1px;
+	transform: rotate(-40deg);
+	transition: 0.5s;
+
+}
+
+#switchRight::after {
+	content: "";
+	position: absolute;
+	left: 0.5vw; 
+	bottom: 0.13vw;
+	background-color: white;
+	height: 1.1vw;
+	width: 0.1px;
+	transform: rotate(40deg);
+	transition: 0.5s;
+}
+
+#switchLeft {
+	height: 2vw; 
+	width: 1vw; 
+	background-color: transparent;
+	cursor: pointer;
+	position: relative;
+	bottom: -12.5vw;
+}
+
+#switchLeft::before {
+	content: "";
+	position: absolute;
+	left: 0.5vw; 
+	bottom: 0.9vw; 
+	background-color: white;
+	height: 1.1vw;
+	width: 0.1px;
+	transform: rotate(40deg);
+	transition: 0.5s;
+}
+
+#switchLeft::after {
+	content: "";
+	position: absolute;
+	left: 0.5vw; 
+	bottom: 0.05vw; 
+	background-color: white;
+	height: 1.1vw;
+	width: 0.1px;
+	transform: rotate(-40deg);
+	transition: 0.5s;
+}
+
+#switchLeft:hover::after {
+	background-color: red;
+	bottom: 0.9vw;
+	transform: rotate(40deg);
+}
+#switchLeft:hover::before {
+	bottom: 0.05vw;
+	transform: rotate(-40deg);
+}
+
+#switchRight:hover::before {
+	background-color: red;
+	bottom: 0.13vw;
+	transform: rotate(40deg);
+}
+#switchRight:hover::after {
+	bottom: 0.85vw;
+	transform: rotate(-40deg);
+}
+
+#id {
+	margin-top: 15vw;
+	margin-left: 9.5vw;
+}
+
+#ring1 {
+
+	height: 11vw;
+	position: absolute;
+	top: 9.5vw;
+	left: 4.8vw;
+	opacity: 0;
+	transition: 0.5s;
+} 
+
+#ring2 {
+	height: 22.5vw;
+	position: absolute;
+	top: 3.3vw;
+	left: -1.2vw;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+#ring3 {
+	height: 33vw;
+	position: absolute;
+	top: -1.8vw;
+	left: -6.6vw;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+
+#nameWrittenSun {
+	position: absolute;
+	top: 28.5vw;
+	left: 1vw;
+	opacity: 0;
+	font-size: 1.5vw;
+	word-wrap: break-word;
+	width: 18vw;
+
+}
+
+#nameWrittenMoon1 {
+	position: absolute;
+	top: 4vw;
+	left: 4vw;
+	opacity: 0;
+	font-size: 1.75vw;
+	width: 16vw;
+	text-align: center;
+}
+
+#nameWrittenMoon2 {
+	position: absolute;
+	top: 6vw;
+	left: 15.5vw;
+	opacity: 0;
+	font-size: 1.5vw;
+	width: 9.5vw;
+	word-wrap: break-word;
+}
+
+#nameWrittenMoon3 {
+	position: absolute;
+	top: 9.5vw;
+	left: 18vw;
+	opacity: 0;
+	font-size: 1.25vw;
+	width: 7vw;
+	word-wrap: break-word;
+}
+
+#PlanetName {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	border-bottom: 0.5px solid rgba(255, 0, 0, 0.5);
+	height: 1.5vw;
+	word-wrap: break-word;
+}
+
+#arrow1 {
+	background-color: rgba(255, 255, 255, 0.5); 
+	width: 1px;
+	height: 0;
+	position: absolute;
+	top: 6vw;
+	left: 11vw;
+	transform: rotate(50deg);
+	animation-name: none;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+	transition: 1s;
+	opacity: 0;
+}
+
+#arrow2 {
+	background-color: rgba(255, 255, 255, 0.5); ;
+	width: 1px;
+	height: 0.5vw;
+	position: absolute;
+	top: 7.5vw;
+	left: 15vw;
+	transform: rotate(50deg);
+	animation-name: none;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+	transition: 1s;
+	opacity: 0;
+}
+
+#arrow3 {
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 1px;
+	height: 0.75vw;
+	position: absolute;
+	top: 10.75vw;
+	left: 17.5vw;
+	transform: rotate(50deg);
+	animation-duration: 0.5s;
+	animation-name: none;
+	animation-fill-mode: forwards;
+	transition: 1s;
+	opacity: 0;
+}
+
+
+@keyframes grow1 {
+	0% {height: 0;}
+	100% {height: 1.45vw;}
+}
+@keyframes grow2 {
+	0% {height: 0;}
+	100% {height: 0.5vw}
+}
+
+@keyframes grow3 {
+	0% {height: 0;}
+	100% {height: 0.75vw}
+}
+/*-------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------*/
+
+
+#choiceSide {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+	height: 40vw;
+	width: 20vw;
+	margin-left: 10vw;
+	margin-top: 5vw;
+
+}
+
+
+#numberDiv {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#ringChoice {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 1vw;
+	padding-top: 2vw;
+}
+
+#numberDiv > label {
+	font-size: 1.5vw;
+}
+
+#ringNumberChosen {
+	padding-left: 0.5vw;
+}
+
+
+#ringNumber {
+	-webkit-appearance: none;
+	padding: 0;
+	outline: none;	
+	height: 1px;
+	background-color: transparent;
+	width: 13.7vw;
+	margin: 1vw;
+	border-radius: 0;
+	outline: 2px solid rgba(255, 255, 255, 0.7);
+	transition: 0.5s;
+}
+
+#ringNumber:focus {
+	-webkit-appearance: none;
+	outline: 10px solid transparent;
+	background-color: red;
+}
+
+@supports (-ms-ime-align:auto) {
+	#ringNumber {
+		height: 12px;
+		outline: 0.2px rgba(255, 255, 255, 0.7) solid;
+		background-color: rgba(255, 255, 255, 0.5);
+	}
+	#ringNumber:focus {
+		background-color: rgba(255, 0, 0, 0.7);
+	}
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+#planetTypeChoice {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+#gasText {
+	opacity: 1;
+	letter-spacing: 0;
+	transition: 0.3s;
+}
+
+#telluricText {
+	opacity: 0;
+	letter-spacing: -1vw;
+	transition: 0.3s;
+}
+
+.moonSelect {
+	opacity: 0;
+	transition: 0.3s;
+}
+
+#sunSelectors {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	opacity: 0;
+	transition: 1s;
+}
+
+#sunSelectors > div > div > div{
+	position: relative;
+	margin-right: 1vw;
+}
+
+
+#yellowClick, #orangeClick, #blueClick, #whiteClick {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	cursor: pointer;
+}
+#sunSelectors > div > div >  div:hover input[type = color]{
+	border: 1px solid rgba(255, 0, 0, 0.5);
+	padding: 0;
+	outline: 1vw solid transparent;
+}
+
+
+input {
+	border:none;
+	outline: none;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 10vw;
+	padding: 0.25vw;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	transition: 0.5s;
+	width: 9vw;
+	height: 1.5vw;
+	font-size: 1vw;
+}
+
+input:focus{
+	background-color: white;
+}
+
+#planetName {
+	border-radius: 0.2vw;
+	background-color: rgba(255, 255, 255, 1);
+	height: 2vw;
+}
+
+#planetName:focus {
+	outline: solid rgba(255, 0, 0, 0.2) 0.2px;
+}
+
+select {
+	background-color: transparent;
+	outline: none;
+	border: none;
+	color: white;
+	width: 7vw;
+	padding: 0.25vw;
+}
+
+select:focus {
+	outline: 0.1px rgba(255, 0, 0, 0.5) solid;
+}
+
+option {
+	background-color: rgba(0, 0, 0, 0.7);
+	border:none;
+	outline: none;
+}
+
+optgroup {
+	background-color: rgba(0, 0, 0, 0.7);
+	border:none;
+	outline: none;
+}
+
+input[type = color] {
+	padding: 0;
+	margin-left: 0.1vw;
+	background-color: transparent;
+	border-radius: 0;
+	height: 2.75vw;
+	width: 2.75vw; 
+	outline: 1px rgba(255, 255, 255, 0.5) solid;
+}
+
+#contenairColor {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+#sunSelectors > p {
+	font-size: 1.15vw;
+	width: 4vw;
+	margin-left: 1vw;
+	border-right: solid rgba(255, 2555, 255, 0.5) 1px;
+	padding-top: 1.5vw;
+	padding-bottom: 1.5vw;
+	margin-right: 0.5vw;
+	padding-right: 0.5vw;
+}
+
+#whiteClick {
+	margin-right: 0;
+}
+
+input[type = number] {
+	width: 2.5vw;
+	border-radius: 0.5vw;
+}
+
+input[type = number]::selection {
+	background-color: rgba(255, 0, 0, 0.2);
+}
+
+
+input[type = radio] {
+	margin: 0;
+	margin-left: 1vw;
+	padding: 0;
+	width: 1.5vw;
+	height: 1.5vw;
+}
+
+#planetTypeChoice {
+	margin-bottom: 2vw;
+}
+
+#numberOfMoontext {
+	font-size: 1.5vw;
+}
+
+#moonColomn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	border-right: 1px solid rgba(255, 255, 255, 0.5);
+	padding-right: 1vw;
+}
+
+#moonrow {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+#moonNumber {
+	margin-left: 2vw;
+}
+
+#moonAll {
+	padding-bottom: 1vw;
+}
+
+
+/*
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+------------- SEARCH PAGE ------------------------------------------*/
+
+#searchBody {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#searchBody {
+	height: 100%;
+	width: 100%;
+}
+
+#searchBody > form {
+	margin-top: 25vw;
+	height: 100%;
+	width: 100%;
+}
+
+#searchBody > form > input {
+	height: 3vw;
+	width: 30vw;
+	margin: 2vw;
+	font-size: 1.5vw;
+}
+
+#searchBody > form > input[type = "submit"] {
+	width: 10vw;
+	color: white;
+	font-size: 2vw;
+	font-weight: 300;
+	font-family: Quicksand, sans-serif;
+	cursor: pointer;
+}
+
+/*----------------------------------------------------------------------------------
+-------------------------------------------------------------------------
+----------------- FIND PAGE ------------------------------------------------------
+*/
+
+#findBody {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#findBody > div {
+	padding : 3vw;
+	border : 0.2px rgba(255, 0, 0, 0.2) solid;
+	margin-top: 20vw;
+}
+
+#findBody > div > span {
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: underline;
+	display: inline-block;
+	color: red;
+	opacity: 0.5;
+	margin-bottom: 1vw;
+	font-size: 2.5vw;
+	width: 100%;
+}
+#findBody > div > p {
+	text-transform: none;
+	color: white;
+	text-decoration: none;
+}
